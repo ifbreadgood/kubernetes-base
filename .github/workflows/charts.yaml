@@ -1,0 +1,26 @@
+name: Create Charts
+on:
+  workflow_dispatch:
+    inputs:
+      image_name:
+        description: 'Name of image to push'
+        required: true
+
+jobs:
+  create_charts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install helm
+        run: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bas
+
+      - name: Push image
+        run: |
+          echo ${{ GITHUB_TOKEN }} | helm registry login ghcr.io -u ${{ github.actor }} --password-stdin
+          cd helm-charts/${{ github.event.inputs.image_name }}
+          helm package .
+          helm push *.tgz ghcr://ghcr.io/${{ github.repository_owner }}
