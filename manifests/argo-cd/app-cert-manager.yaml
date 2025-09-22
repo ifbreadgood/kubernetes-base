@@ -9,7 +9,7 @@ spec:
       targetRevision: v1.18.2
       helm:
         valueFiles:
-          - $values/kubernetes/helm-values/cert-manager/values.yaml
+          - $values/helm-values/cert-manager/values.yaml
     - repoURL: https://github.com/ifbreadgood/kubernetes-base
       targetRevision: HEAD
       ref: values
