@@ -11,10 +11,10 @@ spec:
       helm:
         valueFiles:
           - $values/helm-values/argo-cd/values.yaml
-    - repoURL: https://github.com/ifbreadgood/k8s-base
+    - repoURL: https://github.com/ifbreadgood/kubernetes-base
       targetRevision: HEAD
       ref: values
-    - repoURL: https://github.com/ifbreadgood/k8s-base
+    - repoURL: https://github.com/ifbreadgood/kubernetes-base
       targetRevision: HEAD
       path: manifests/argo-cd
   destination:
