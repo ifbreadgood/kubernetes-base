@@ -24,4 +24,4 @@ jobs:
           cd helm-charts/${{ github.event.inputs.image_name }}
           helm dependency update
           helm package .
-          helm push *.tgz ghcr://ghcr.io/${{ github.repository_owner }}
+          helm push *.tgz oci://ghcr.io/${{ github.repository_owner }}
