@@ -20,7 +20,7 @@ jobs:
 
       - name: Push image
         run: |
-          echo ${{ GITHUB_TOKEN }} | helm registry login ghcr.io -u ${{ github.actor }} --password-stdin
+          echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ghcr.io -u ${{ github.actor }} --password-stdin
           cd helm-charts/${{ github.event.inputs.image_name }}
           helm package .
           helm push *.tgz ghcr://ghcr.io/${{ github.repository_owner }}
