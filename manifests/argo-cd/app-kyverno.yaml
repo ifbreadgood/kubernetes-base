@@ -7,9 +7,9 @@ spec:
     - repoURL: https://kyverno.github.io/kyverno/
       chart: *name
       targetRevision: 3.5.2
-#      helm:
-#        valueFiles:
-#          - $values/helm-values/kyverno/values.yaml
+      helm:
+        valueFiles:
+          - $values/helm-values/kyverno/values.yaml
     - repoURL: https://github.com/ifbreadgood/kubernetes-base
       targetRevision: HEAD
       ref: values
