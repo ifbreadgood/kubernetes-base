@@ -25,7 +25,7 @@ securityContext:
       - FOWNER
       - SETGID
       - SETUID
-      - NET_BIND_SERVICE # gateway api requirement
+#      - NET_BIND_SERVICE # gateway api requirement
     cleanCiliumState:
       - NET_ADMIN
       - SYS_ADMIN
@@ -47,16 +47,16 @@ k8sClientRateLimit:
   burst: 100
   qps: 50
 
-gatewayAPI:
-  enabled: true
-  enableAlpn: true
-  enableAppProtocol: true
+#gatewayAPI:
+#  enabled: true
+#  enableAlpn: true
+#  enableAppProtocol: true
 
 # gateway api requirement
-envoy:
-  securityContext:
-    capabilities:
-      keepCapNetBindService: true
+#envoy:
+#  securityContext:
+#    capabilities:
+#      keepCapNetBindService: true
 
 # for istio integration
 cni:
