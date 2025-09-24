@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: &name kiali-operator
+spec:
+  sources:
+    - repoURL: https://kiali.org/helm-charts
+      chart: *name
+      targetRevision: 2.16.0
+      helm:
+        valueFiles:
+          - $values/helm-values/kiali/values.yaml
+    - repoURL: https://github.com/ifbreadgood/kubernetes-base
+      targetRevision: HEAD
+      ref: values
+    - repoURL: https://github.com/ifbreadgood/kubernetes-base
+      targetRevision: HEAD
+      path: manifests/kiali
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: *name
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      allowEmpty: false
+    syncOptions:
+      - CreateNamespace=true
+      - RespectIgnoreDifferences=true
+      - ApplyOutOfSyncOnly=true
+      - ServerSideApply=true
+    retry:
+      limit: 3
+      backoff:
+        duration: 15s
+        factor: 2
+        maxDuration: 3m

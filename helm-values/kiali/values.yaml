@@ -1,0 +1,4 @@
+watchNamespace: kiali-operator
+cr:
+  create: true
+  namespace: kiali-operator
