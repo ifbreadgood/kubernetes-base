@@ -5,7 +5,7 @@ metadata:
 spec:
   parentRefs:
     - name: trial-studio-gateway
-      namespace: cilium
+      namespace: istio-system
   hostnames: ["argo-cd.trial.studio"]
   rules:
     - backendRefs:
