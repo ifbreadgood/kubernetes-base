@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: &name istio
+  name: &name istio-system
 spec:
   sources:
     - repoURL: https://istio-release.storage.googleapis.com/charts
