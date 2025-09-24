@@ -30,6 +30,9 @@ spec:
       - CreateNamespace=true
       - RespectIgnoreDifferences=true
       - ApplyOutOfSyncOnly=true
+    managedNamespaceMetadata:
+      labels:
+        istio.io/dataplane-mode: ambient
     retry:
       limit: 3
       backoff:
