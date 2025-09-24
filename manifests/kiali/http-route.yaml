@@ -6,8 +6,13 @@ spec:
   parentRefs:
     - name: trial-studio-gateway
       namespace: istio-system
-  hostnames: ["kiali.trial.studio"]
+      kind: Gateway
+      group: gateway.networking.k8s.io
+  hostnames:
+    - kiali.trial.studio
   rules:
     - backendRefs:
         - name: kiali
           port: 20001
+          group: ""
+          kind: Service

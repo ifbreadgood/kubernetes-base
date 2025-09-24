@@ -6,8 +6,12 @@ spec:
   parentRefs:
     - name: trial-studio-gateway
       namespace: istio-system
+      kind: Gateway
+      group: gateway.networking.k8s.io
   hostnames: ["argo-cd.trial.studio"]
   rules:
     - backendRefs:
         - name: argo-cd-argocd-server
           port: 443
+          group: ""
+          kind: Service
