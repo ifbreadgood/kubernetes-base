@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: &name kiali-operator
+  name: &name kiali-server
 spec:
   sources:
     - repoURL: https://kiali.org/helm-charts

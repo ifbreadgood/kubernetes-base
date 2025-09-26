@@ -1,7 +1,2 @@
-watchNamespace: kiali-operator
-cr:
-  create: true
-  namespace: kiali-operator
-  spec:
-    auth:
-      strategy: anonymous
+auth:
+  strategy: anonymous
