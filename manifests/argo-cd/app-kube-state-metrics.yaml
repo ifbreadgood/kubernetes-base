@@ -21,6 +21,9 @@ spec:
       - RespectIgnoreDifferences=true
       - ApplyOutOfSyncOnly=true
       - ServerSideApply=true
+    managedNamespaceMetadata:
+      labels:
+        istio.io/dataplane-mode: ambient
     retry:
       limit: 3
       backoff:
