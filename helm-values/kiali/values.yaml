@@ -5,8 +5,8 @@ external_services:
   istio:
     root_namespace: istio-system
   prometheus:
-    url: http://10.0.0.5:9091
-#    url: https://victoria-metrics.trial.studio
+#    url: http://10.0.0.5:9091
+    url: https://victoria-metrics.trial.studio
   grafana:
     enabled: false
     external_url: 'http://my-ingress-host/grafana'
